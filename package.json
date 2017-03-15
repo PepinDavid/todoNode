@@ -1,0 +1,11 @@
+{
+  "name": "todo-mean",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "latest",
+    "bower": "^1.7.9",
+    "express": "latest",
+    "method-override": "latest",
+    "mongoose": "latest"
+  }
+}
