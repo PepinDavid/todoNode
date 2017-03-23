@@ -8,6 +8,10 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 
+//controllers
+var todoController = require('./controllers/todo.controller');
+var userController = require('./controllers/user.controller')
+
 //configuration =============================================================
 
 //config files
@@ -22,6 +26,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(db.url);
 
 
+//Middleware =================================================================
 //get all data/stuff of the body (POST) parameters
 //parse application/json
 app.use(bodyParser.json());
@@ -38,7 +43,6 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 //set the static files olcation /public/img will be /img for users
 app.use(express.static(__dirname+'/public'));
 
-//Middleware =================================================================
 app.use(function(req, res, next){
     var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     console.log(ip)
@@ -47,13 +51,38 @@ app.use(function(req, res, next){
 });
 
 //routes =========================
-require('./app/routes')(app); // configure our routes
+//Init route express
+var router = express.Router();
+
+//Todo endpoint
+//create endpoint /todos
+router.route('/todos')
+    .get(todoController.getTodos)
+    .post(todoController.postTodo);
+
+//create endpoint /todos/todo_id
+router.route('/todos/:todo_id')
+    .get(todoController.getTodo)
+    .put(todoController.putTodo)
+    .remove(todoController.removeTodo);
+
+//Users endpoint
+//create endpoint /users
+router.route('/users')
+    .get(userController.getUsers)
+    .post(userController.postUser);
+
+//create endpoint /users/user_id
+router.route('/users/:user_id').
+    .get(userController.getUser)
+    .put(todoController.putUser);
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 //app.use('/api', router);
 
 //start app ======================
+app.use('/api', router);
 app.listen(port)
 console.log('Magic happend on port ', port);
 

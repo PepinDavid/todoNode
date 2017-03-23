@@ -9,5 +9,6 @@ module.exports = mongoose.model('Todo', new Schema({
     titre: {type: String, default: ''},
     descriptions: { type: String, default: ''},
     createdAt : { type: Date, default: new Date()},
+    modifiedAt: { type: Date, default: new Date()},
     isDo: {type: Boolean, default: false}
 }), 'todo');//collection
