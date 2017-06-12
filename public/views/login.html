@@ -1,0 +1,22 @@
+<div class="jumbotron text-center">
+    <div>
+        <div class="jumbotron text-center">
+            <h1>Login</h1>
+            <div>
+                <form id="user-from" ng-submit="loginUser(formUser)">
+                    <fieldset>
+                        <input class="form-control" type="text" placeholder="Pseudo ou email" ng-model="formUser.username">
+                        <input class="form-control" type="password" placeholder="Mot de passe" ng-model="formUser.password">
+                        <input class="btn btn-success btn-block" type="submit" value="Login">
+                    </fieldset>
+                </form>
+            </div>
+            <div>
+                {{response}}
+            </div>
+            <div class="text-right">
+                <a href="/register">Pas encore inscrit</a>
+            </div>
+        </div>
+    </div>
+</div>

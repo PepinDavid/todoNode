@@ -1,0 +1,22 @@
+<div class="jumbotron text-center">
+    <h1>{{todo.titre}}</h1>
+    <div class="jumbotron text-center">
+        <form id="todo-from" ng-submit="addDetail(formTodo)">
+                <fieldset>
+                        <input class="form-control" type="text" placeholder="ajouter une tache" ng-model="formTodo.descriptions">
+                        <input class="btn btn-success btn-block" type="submit" value="Valider">
+                </fieldset>
+        </form>
+    </div>
+    <div>
+        <ul>
+                <li ng-repeat="description in todo.descriptions track by $index">
+                                <button class="btn-xs btn btn-danger" style="float: left;" ng-click="removeDescription($index)">Supprimer</button>
+                                <a class="btn btn-default btn-block" href="#">
+                                        {{$index}}
+                                        {{description}}
+                                </a>
+                        </li>
+        </ul>
+    </div>
+</div>

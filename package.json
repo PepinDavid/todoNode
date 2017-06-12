@@ -1,12 +1,28 @@
 {
-  "name": "todo-mean",
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "tutorial and test todo list with stack MEAN",
   "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Pepin",
+  "license": "ISC",
   "dependencies": {
-    "body-parser": "latest",
-    "bower": "^1.7.9",
-    "express": "latest",
-    "method-override": "latest",
-    "mongoose": "latest",
-    "nodemon": "^1.11.0"
+	  "body-parser": "latest",
+	  "bower": "latest",
+	  "express": "latest",
+	  "method-override": "latest",
+      "client-sessions" : "latest",
+	  "mongoose": "latest",
+	  "nodemon": "latest",
+      "bcrypt": "latest",
+      
+	  "bootstrap": "latest",
+	  "font-awesome": "latest",
+	  "animate.css": "latest",
+	  "angular": "latest",
+	  "angular-route": "latest"
+
   }
 }

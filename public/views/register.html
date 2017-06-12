@@ -1,0 +1,21 @@
+<div class="jumbotron text-center">
+    <div>
+        <div class="jumbotron text-center">
+            <h1>S'enregistrer</h1>
+            <div>
+                <form id="user-from" ng-submit="registerUser(formUser)">
+                    <fieldset>
+                        <input class="form-control" type="text" placeholder="Pseudo" ng-model="formUser.username">
+                        <input class="form-control" type="text" placeholder="email" ng-model="formUser.email">
+                        <input class="form-control" type="password" placeholder="Mot de passe" ng-model="formUser.password">
+                        <input class="form-control" type="password" placeholder="Vérification de mot de passe" ng-model="formUser.passwordVerif">
+                        <input class="btn btn-success btn-block" type="submit" value="S'enregistrer">
+                    </fieldset>
+                </form>
+            </div>
+            <div>
+                {{response}}
+            </div>
+        </div>
+    </div>
+</div>

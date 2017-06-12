@@ -1,0 +1,20 @@
+<!-- public/views/todocreate.html -->
+
+<div class="jumbotron text-center">
+    <div>
+        <div class="jumbotron text-center">
+                    <h1>add Todos</h1>
+                    <div>
+                        <form id="todo-from" ng-submit="addTodo(formTodo)">
+                                <fieldset>
+                                        <input class="form-control" type="text" placeholder="Titre de la tache" ng-model="formTodo.titre">
+                                        <input class="btn btn-success btn-block" type="submit" value="Valider">
+                                </fieldset>
+                        </form>
+                    </div>
+                    <div>
+                        {{response}}
+                    </div>
+                </div>
+    </div>
+</div>
